@@ -2,15 +2,18 @@ __author__ = "S.CHENG"
 """
 comments
 """
-
+#libirary block
 import time
 import random
 import numpy as np
 import matplotlib.pyplot as plt
 
+#varible block
 personNum = 100
 
+personList = []
 
+#class defination block
 class person:
 	# class person defined to manufact date more convenitent
 	index   = 0
@@ -35,14 +38,11 @@ class person:
 	def gainMoney(self):
 		self.money = self.money + 1
 
-
+#function defination block
 def personInit(personL, personN):
-	personL = []
 	for i in range(personN):
 		personL.append(person())
 		personL[i].set_index(i)
-
-	return personL
 
 def moneyExchange(personL):
 	for i in range(len(personL)):
@@ -59,9 +59,11 @@ def get_wealth(personL):
 def plotFig():
 	pass
 
+
+#main function
 def main():
-	personList = []
-	personList = personInit(personList, personNum)
+	
+	personInit(personList, personNum)
 
 	for i in range(100):
 		moneyExchange(personList)
@@ -69,9 +71,6 @@ def main():
 	wealth = get_wealth(personList)
 
 	print(wealth)
-
-
-
 
 
 if __name__ == '__main__':
